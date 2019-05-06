@@ -101,7 +101,7 @@ module JavaBuildpack
 
       def service?(filter)
         filter = Regexp.new(filter) unless filter.is_a?(Regexp)
-
+        print filter
         lambda do |service|
           service['name'] =~ filter || service['label'] =~ filter || service['tags'].any? { |tag| tag =~ filter }
         end

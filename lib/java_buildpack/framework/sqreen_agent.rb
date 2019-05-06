@@ -22,14 +22,12 @@ require 'java_buildpack/framework'
 module JavaBuildpack
   module Framework
 
-    # Encapsulates the functionality for enabling Azure Application Insights support.
+    # Encapsulates the functionality for enabling Sqreen support.
     class SqreenAgent < JavaBuildpack::Component::VersionedDependencyComponent
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
-        print "Downloading sqreen jar...."
         download_jar
-        @droplet.copy_resources
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
