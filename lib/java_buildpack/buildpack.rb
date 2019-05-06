@@ -68,6 +68,8 @@ module JavaBuildpack
       no_container unless container
 
       component_detection('JRE', @jres, true).first.compile
+      print "XXXXXXXXXXXX"
+      print @frameworks
       component_detection('framework', @frameworks, false).each(&:compile)
 
       container.compile
