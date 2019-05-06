@@ -92,7 +92,8 @@ module Package
       'spring_boot_cli' => 'Spring Boot CLI',
       'takipi_agent' => 'Takipi Agent',
       'tomcat' => 'Tomcat',
-      'your_kit_profiler' => 'YourKit Profiler'
+      'your_kit_profiler' => 'YourKit Profiler',
+      'sqreen_agent' => 'Sqreen Agent'
     }.freeze
 
     PLATFORM_PATTERN = /\{platform\}/.freeze
