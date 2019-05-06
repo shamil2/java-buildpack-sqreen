@@ -47,7 +47,7 @@ module JavaBuildpack
         @application.services.one_service? FILTER, TOKEN_KEY
       end
 
-      FILTER = /sqreen-service/.freeze
+      FILTER = /sqreen/.freeze
 
       TOKEN_KEY = 'TOKEN_KEY'
 
