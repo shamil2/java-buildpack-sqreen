@@ -27,6 +27,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
+        print "Downloading sqreen jar...."
         download_jar
         @droplet.copy_resources
       end

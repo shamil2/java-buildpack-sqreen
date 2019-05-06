@@ -49,23 +49,14 @@ describe JavaBuildpack::Framework::SqreenAgent do
       expect(sandbox + "sqreen_agent-#{version}.jar").to exist
     end
 
-    it 'copies resources',
-       cache_fixture: 'stub-sqreen-agent.jar' do
-
-      component.compile
-
-      expect(sandbox + 'AI-Agent.xml').to exist
-    end
-
     it 'updates JAVA_OPTS' do
       allow(services).to receive(:find_service)
-        .and_return('credentials' => { 'sqreen.token' => 'test-instrumentation-key' })
+        .and_return('credentials' => { 'TOKEN_KEY' => 'test-token-key' })
 
       component.release
-
       expect(java_opts).to include('-javaagent:$PWD/.java-buildpack/sqreen_agent/' \
                                    "sqreen_agent-#{version}.jar")
-      expect(java_opts).to include('-Dsqreen.token=test-instrumentation-key')
+      expect(java_opts).to include('-Dsqreen.token=test-token-key')
     end
 
   end
